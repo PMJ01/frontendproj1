@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SarkarSarthi - Your Guide to Government Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --bg-color: #ffffff;
+            --text-color: #2c3e50;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #34495e;
+            --secondary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #121212;
+            --text-color: #ecf0f1;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .theme-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        .theme-switch:hover {
+            transform: rotate(30deg);
+        }
+
+        .social-links {
+            text-align: center;
+            padding: 20px 0;
+            background: var(--primary-color);
+            margin-top: 40px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581092921461-dabf53c7cffb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) rotateX(10deg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+
+
+        .cta-button {
+            background: var(--secondary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .demo-button {
+            background: var(--accent-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-left: 20px;
+        }
+
+        .demo-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255,152,0,0.4);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)) !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <button class="theme-switch" id="themeSwitch">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SarkarSarthi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="display-3 animate__animated animate__fadeInDown" data-aos="fade-down">Welcome to SarkarSarthi</h1>
+            <p class="lead animate__animated animate__fadeInUp animate__delay-1s" data-aos="fade-up" data-aos-delay="200">Your trusted guide to understanding PAN, Aadhar, and Government Policies</p>
+            <div class="mt-4" data-aos="fade-up" data-aos-delay="400">
+                <a href="#services" class="cta-button">Explore Services</a>
+                <a href="#" class="demo-button" data-bs-toggle="modal" data-bs-target="#demoModal">Watch Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="container py-5" style="position: relative; z-index: 1;">
+        <h2 class="text-center mb-5" data-aos="fade-up">Our Services</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="800">
+                <div class="service-card" data-aos="fade-in" data-aos-delay="100">
+                    <i class="fas fa-id-card service-icon"></i>
+                    <h3>PAN Card Services</h3>
+                    <p>The Permanent Account Number (PAN) is a vital 10-digit alphanumeric identifier issued by the Income Tax Department. It serves as proof of identity and is essential for financial transactions.</p>
+                    <a href="https://www.incometax.gov.in/iec/foportal" class="btn btn-primary" target="_blank">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                <div class="service-card" data-aos="fade-in" data-aos-delay="200">
+                    <i class="fas fa-fingerprint service-icon"></i>
+                    <h3>Aadhaar Card Services</h3>
+                    <p>Aadhaar is a 12-digit unique identity number issued by UIDAI, serving as a proof of identity and address for Indian residents. It's essential for accessing government benefits and services.</p>
+                    <a href="https://uidai.gov.in/" class="btn btn-primary" target="_blank">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                <div class="service-card" data-aos="fade-in" data-aos-delay="300">
+                    <i class="fas fa-landmark service-icon floating"></i>
+                    <h3>Government Policies</h3>
+                    <p>Stay updated with the latest government policies and schemes. Get simplified explanations of complex policies and understand how they affect you.</p>
+                    <a href="https://www.india.gov.in/" class="btn btn-primary" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Demo Modal -->
+    <div class="modal fade" id="demoModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">SarkarSarthi Demo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/your-video-id" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <h2>About SarkarSarthi</h2>
+                    <p>SarkarSarthi is dedicated to helping Indian citizens understand and access government services easily. We provide clear, simple explanations of complex government processes and help you navigate through various government schemes and services.</p>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" class="img-fluid rounded" alt="About Us">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Links -->
+    <div class="social-links">
+        <a href="https://www.instagram.com/sarkarsarthi" target="_blank" title="Follow us on Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="mailto:contact@sarkarsarthi.com" title="Email us">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 SarkarSarthi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+            easing: 'ease'
+        });
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script>
+        // Theme switcher
+        const themeSwitch = document.getElementById('themeSwitch');
+        const icon = themeSwitch.querySelector('i');
+
+        themeSwitch.addEventListener('click', () => {
+            document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+            icon.className = document.body.dataset.theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        });
+
+        // Particles.js configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#4caf50' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#4caf50', opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 6, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>

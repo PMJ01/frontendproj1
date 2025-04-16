@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SarkarSarthi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --bg-color: #ffffff;
+            --text-color: #2c3e50;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #34495e;
+            --secondary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #121212;
+            --text-color: #ecf0f1;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+            padding-top: 80px;
+        }
+
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)) !important;
+        }
+
+        .language-switch {
+            position: fixed;
+            top: 20px;
+            right: 100px;
+            z-index: 1000;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .language-switch:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .contact-form {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-control {
+            border-radius: 10px;
+            padding: 12px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 0.2rem rgba(var(--accent-color-rgb), 0.25);
+        }
+
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .btn-submit {
+            background: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .service-info {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SarkarSarthi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <button class="language-switch" onclick="toggleLanguage()">Switch to हिंदी</button>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="contact-form" data-aos="fade-up">
+                    <div id="english-content" class="language-content active">
+                        <h2 class="text-center mb-4">Contact Us</h2>
+                        <p class="text-center mb-4">Need help with government services? Fill out the form below and we'll assist you with your requirements.</p>
+                    </div>
+                    <div id="hindi-content" class="language-content" style="display: none;">
+                        <h2 class="text-center mb-4">संपर्क करें</h2>
+                        <p class="text-center mb-4">सरकारी सेवाओं में सहायता चाहिए? नीचे दिया गया फॉर्म भरें और हम आपकी आवश्यकताओं में आपकी सहायता करेंगे।</p>
+                    </div>
+
+                    <form id="contactForm" onsubmit="return handleSubmit(event)">
+                        <div class="mb-3">
+                            <label class="form-label">
+                                <span class="english-label">Full Name</span>
+                                <span class="hindi-label" style="display: none;">पूरा नाम</span>
+                            </label>
+                            <input type="text" class="form-control" id="name" required placeholder="Enter your full name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">
+                                <span class="english-label">Email Address</span>
+                                <span class="hindi-label" style="display: none;">ईमेल पता</span>
+                            </label>
+                            <input type="email" class="form-control" id="email" required placeholder="Enter your email address">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">
+                                <span class="english-label">Phone Number (10 digits)</span>
+                                <span class="hindi-label" style="display: none;">फोन नंबर (10 अंक)</span>
+                            </label>
+                            <input type="tel" class="form-control" id="phone" required pattern="[0-9]{10}" placeholder="Enter your phone number">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">
+                                <span class="english-label">Select Service</span>
+                                <span class="hindi-label" style="display: none;">सेवा चुनें</span>
+                            </label>
+                            <select class="form-control" id="service" required onchange="showServiceInfo()">
+                                <option value="">Choose a service...</option>
+                                <option value="aadhar">Aadhar Card / आधार कार्ड</option>
+                                <option value="pan">PAN Card / पैन कार्ड</option>
+                                <option value="birth">Birth Certificate / जन्म प्रमाण पत्र</option>
+                                <option value="other">Other Services / अन्य सेवाएं</option>
+                            </select>
+                        </div>
+
+                        <div id="serviceInfo" class="service-info mb-3">
+                            <!-- Service specific information will be displayed here -->
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">
+                                <span class="english-label">Your Message</span>
+                                <span class="hindi-label" style="display: none;">आपका संदेश</span>
+                            </label>
+                            <textarea class="form-control" id="message" rows="4" required placeholder="Enter your message here"></textarea>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-submit">
+                                <span class="english-text">Submit Request</span>
+                                <span class="hindi-text" style="display: none;">अनुरोध भेजें</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Initialize particles.js
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#3498db" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#3498db", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+
+        function toggleLanguage() {
+            const englishContent = document.getElementById('english-content');
+            const hindiContent = document.getElementById('hindi-content');
+            const englishLabels = document.querySelectorAll('.english-label');
+            const hindiLabels = document.querySelectorAll('.hindi-label');
+            const englishText = document.querySelectorAll('.english-text');
+            const hindiText = document.querySelectorAll('.hindi-text');
+            const languageSwitch = document.querySelector('.language-switch');
+
+            if (englishContent.classList.contains('active')) {
+                englishContent.style.display = 'none';
+                hindiContent.style.display = 'block';
+                englishLabels.forEach(label => label.style.display = 'none');
+                hindiLabels.forEach(label => label.style.display = 'block');
+                englishText.forEach(text => text.style.display = 'none');
+                hindiText.forEach(text => text.style.display = 'block');
+                languageSwitch.textContent = 'Switch to English';
+                englishContent.classList.remove('active');
+                hindiContent.classList.add('active');
+            } else {
+                englishContent.style.display = 'block';
+                hindiContent.style.display = 'none';
+                englishLabels.forEach(label => label.style.display = 'block');
+                hindiLabels.forEach(label => label.style.display = 'none');
+                englishText.forEach(text => text.style.display = 'block');
+                hindiText.forEach(text => text.style.display = 'none');
+                languageSwitch.textContent = 'Switch to हिंदी';
+                englishContent.classList.add('active');
+                hindiContent.classList.remove('active');
+            }
+        }
+
+        function showServiceInfo() {
+            const service = document.getElementById('service').value;
+            const serviceInfo = document.getElementById('serviceInfo');
+            const isHindi = document.getElementById('hindi-content').classList.contains('active');
+
+            let info = '';
+            switch(service) {
+                case 'aadhar':
+                    info = isHindi ? 
+                        '<h5>आधार कार्ड के लिए आवश्यक दस्तावेज:</h5><ul><li>पहचान प्रमाण</li><li>पते का प्रमाण</li><li>जन्म प्रमाण पत्र</li></ul>' :
+                        '<h5>Required Documents for Aadhar Card:</h5><ul><li>Proof of Identity</li><li>Proof of Address</li><li>Birth Certificate</li></ul>';
+                    break;
+                case 'pan':
+                    info = isHindi ?
+                        '<h5>पैन कार्ड के लिए आवश्यक दस्तावेज:</h5><ul><li>पहचान प्रमाण</li><li>पते का प्रमाण</li><li>फोटो</li></ul>' :
+                        '<h5>Required Documents for PAN Card:</h5><ul><li>Proof of Identity</li><li>Proof of Address</li><li>Photograph</li></ul>';
+                    break;
+                case 'birth':
+                    info = isHindi ?
+                        '<h5>जन्म प्रमाण पत्र के लिए आवश्यक दस्तावेज:</h5><ul><li>अस्पताल का प्रमाण पत्र</li><li>माता-पिता का पहचान प्रमाण</li></ul>' :
+                        '<h5>Required Documents for Birth Certificate:</h5><ul><li>Hospital Certificate</li><li>Parents\'s ID Proof</li></ul>';
+                    break;
+                default:
+                    info = '';
+            }
+
+            if (info) {
+                serviceInfo.innerHTML = info;
+                serviceInfo.style.display = 'block';
+            } else {
+                serviceInfo.style.display = 'none';
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const isHindi = document.getElementById('hindi-content').classList.contains('active');
+            alert(isHindi ? 'आपका अनुरोध सफलतापूर्वक भेज दिया गया है। हम जल्द ही आपसे संपर्क करेंगे।' : 'Your request has been submitted successfully. We will contact you soon.');
+            event.target.reset();
+            return false;
+        }
+    </script>
+</body>
+</html>

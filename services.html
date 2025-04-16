@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - SarkarSarthi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --bg-color: #ffffff;
+            --text-color: #2c3e50;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #34495e;
+            --secondary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #121212;
+            --text-color: #ecf0f1;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+            padding-top: 80px;
+        }
+
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)) !important;
+        }
+
+        .language-switch {
+            position: fixed;
+            top: 20px;
+            right: 100px;
+            z-index: 1000;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .language-switch:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .service-section {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .video-container {
+            margin-bottom: 30px;
+        }
+
+        .service-content {
+            display: none;
+        }
+
+        .service-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SarkarSarthi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <button class="language-switch" onclick="toggleLanguage()">Switch to हिंदी</button>
+
+    <div class="container py-5">
+        <h1 class="text-center mb-5" data-aos="fade-up">Our Services / हमारी सेवाएं</h1>
+
+        <!-- Aadhaar Card Section -->
+        <div class="service-section" data-aos="fade-up">
+            <h2 class="mb-4">Aadhaar Card Services / आधार कार्ड सेवाएं</h2>
+            
+            <div class="video-container">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://youtu.be/7iaxnRrON0Y?si=T3uFZ9vykMavPD9M" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="service-content active" id="aadhaar-english">
+                <h3>What is Aadhaar?</h3>
+                <p>Aadhaar is a 12-digit unique identity number issued by UIDAI that serves as a proof of identity and address for Indian residents.</p>
+                
+                <h4>Key Features:</h4>
+                <ul>
+                    <li>Unique 12-digit identification number</li>
+                    <li>Biometric and demographic data</li>
+                    <li>Valid across India</li>
+                    <li>Essential for government schemes</li>
+                </ul>
+
+                <h4>How to Apply:</h4>
+                <ol>
+                    <li>Visit nearest Aadhaar enrollment center</li>
+                    <li>Fill the enrollment form</li>
+                    <li>Provide required documents</li>
+                    <li>Complete biometric scanning</li>
+                    <li>Receive acknowledgment slip</li>
+                </ol>
+                <a href="https://uidai.gov.in/" class="btn btn-primary mt-3" target="_blank">Official UIDAI Website</a>
+            </div>
+
+            <div class="service-content" id="aadhaar-hindi">
+                <h3>आधार क्या है?</h3>
+                <p>आधार UIDAI द्वारा जारी की गई 12 अंकों की विशिष्ट पहचान संख्या है जो भारतीय निवासियों के लिए पहचान और पते के प्रमाण के रूप में काम करती है।</p>
+                
+                <h4>मुख्य विशेषताएं:</h4>
+                <ul>
+                    <li>विशिष्ट 12 अंकों की पहचान संख्या</li>
+                    <li>बायोमेट्रिक और जनसांख्यिकीय डेटा</li>
+                    <li>पूरे भारत में मान्य</li>
+                    <li>सरकारी योजनाओं के लिए आवश्यक</li>
+                </ul>
+
+                <h4>आवेदन कैसे करें:</h4>
+                <ol>
+                    <li>नजदीकी आधार नामांकन केंद्र पर जाएं</li>
+                    <li>नामांकन फॉर्म भरें</li>
+                    <li>आवश्यक दस्तावेज प्रदान करें</li>
+                    <li>बायोमेट्रिक स्कैनिंग पूरी करें</li>
+                    <li>पावती पर्ची प्राप्त करें</li>
+                </ol>
+                <a href="https://uidai.gov.in/" class="btn btn-primary mt-3" target="_blank">आधिकारिक UIDAI वेबसाइट</a>
+            </div>
+        </div>
+
+        <!-- PAN Card Section -->
+        <!-- Birth Certificate Section -->
+        <div class="service-section" data-aos="fade-up">
+            <h2 class="mb-4">Birth Certificate Services / जन्म प्रमाण पत्र सेवाएं</h2>
+            
+            <div class="video-container">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://youtu.be/h5r8PxQ_-xY?si=L3VMYWSN6DOyyvT9" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="service-content active" id="birth-english">
+                <h3>Birth Certificate Information</h3>
+                <p>A birth certificate is a vital document that serves as legal proof of birth and citizenship. It's essential for school admission, passport application, and other official purposes.</p>
+                
+                <h4>Key Points:</h4>
+                <ul>
+                    <li>Legal proof of birth</li>
+                    <li>Contains birth date and place</li>
+                    <li>Parents' details included</li>
+                    <li>Required for multiple purposes</li>
+                </ul>
+
+                <h4>Application Process:</h4>
+                <ol>
+                    <li>Visit local municipal corporation</li>
+                    <li>Submit required documents</li>
+                    <li>Fill application form</li>
+                    <li>Pay prescribed fee</li>
+                    <li>Collect certificate</li>
+                </ol>
+                <a href="https://www.india.gov.in/birth-certificate-procedures" class="btn btn-primary mt-3" target="_blank">Official Portal</a>
+            </div>
+
+            <div class="service-content" id="birth-hindi">
+                <h3>जन्म प्रमाण पत्र जानकारी</h3>
+                <p>जन्म प्रमाण पत्र एक महत्वपूर्ण दस्तावेज है जो जन्म और नागरिकता का कानूनी प्रमाण है। यह स्कूल में प्रवेश, पासपोर्ट आवेदन और अन्य आधिकारिक उद्देश्यों के लिए आवश्यक है।</p>
+                
+                <h4>मुख्य बिंदु:</h4>
+                <ul>
+                    <li>जन्म का कानूनी प्रमाण</li>
+                    <li>जन्म तिथि और स्थान शामिल</li>
+                    <li>माता-पिता का विवरण</li>
+                    <li>कई उद्देश्यों के लिए आवश्यक</li>
+                </ul>
+
+                <h4>आवेदन प्रक्रिया:</h4>
+                <ol>
+                    <li>स्थानीय नगर निगम जाएं</li>
+                    <li>आवश्यक दस्तावेज जमा करें</li>
+                    <li>आवेदन पत्र भरें</li>
+                    <li>निर्धारित शुल्क का भुगतान करें</li>
+                    <li>प्रमाण पत्र प्राप्त करें</li>
+                </ol>
+                <a href="https://www.india.gov.in/birth-certificate-procedures" class="btn btn-primary mt-3" target="_blank">आधिकारिक पोर्टल</a>
+            </div>
+        </div>
+
+        <!-- Voter ID Section -->
+        <div class="service-section" data-aos="fade-up">
+            <h2 class="mb-4">Voter ID Services / मतदाता पहचान पत्र सेवाएं</h2>
+            
+            <div class="video-container">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/ABC456" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="service-content active" id="voter-english">
+                <h3>About Voter ID</h3>
+                <p>A Voter ID or EPIC is an identity document issued by the Election Commission of India to all eligible voters. It serves as an identity proof for voting in elections.</p>
+                
+                <h4>Important Features:</h4>
+                <ul>
+                    <li>Official voter identification</li>
+                    <li>Contains photo and details</li>
+                    <li>Required for voting</li>
+                    <li>Valid ID proof</li>
+                </ul>
+
+                <h4>How to Apply:</h4>
+                <ol>
+                    <li>Visit NVSP portal</li>
+                    <li>Fill Form 6</li>
+                    <li>Upload documents</li>
+                    <li>Submit application</li>
+                    <li>Track status online</li>
+                </ol>
+                <a href="https://www.nvsp.in/" class="btn btn-primary mt-3" target="_blank">NVSP Portal</a>
+            </div>
+
+            <div class="service-content" id="voter-hindi">
+                <h3>मतदाता पहचान पत्र के बारे में</h3>
+                <p>मतदाता पहचान पत्र या EPIC भारत के चुनाव आयोग द्वारा सभी योग्य मतदाताओं को जारी किया गया एक पहचान दस्तावेज है। यह चुनावों में मतदान के लिए पहचान प्रमाण के रूप में काम करता है।</p>
+                
+                <h4>महत्वपूर्ण विशेषताएं:</h4>
+                <ul>
+                    <li>आधिकारिक मतदाता पहचान</li>
+                    <li>फोटो और विवरण शामिल</li>
+                    <li>मतदान के लिए आवश्यक</li>
+                    <li>वैध पहचान प्रमाण</li>
+                </ul>
+
+                <h4>आवेदन कैसे करें:</h4>
+                <ol>
+                    <li>NVSP पोर्टल पर जाएं</li>
+                    <li>फॉर्म 6 भरें</li>
+                    <li>दस्तावेज अपलोड करें</li>
+                    <li>आवेदन जमा करें</li>
+                    <li>ऑनलाइन स्थिति की जाँच करें</li>
+                </ol>
+                <a href="https://www.nvsp.in/" class="btn btn-primary mt-3" target="_blank">NVSP पोर्टल</a>
+            </div>
+        </div>
+
+        <!-- PAN Card Section -->
+        <div class="service-section" data-aos="fade-up">
+            <h2 class="mb-4">PAN Card Services / पैन कार्ड सेवाएं</h2>
+            
+            <div class="video-container">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/9H1mYJvF6Xs" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="service-content active" id="pan-english">
+                <h3>What is a PAN Card?</h3>
+                <p>A Permanent Account Number (PAN) is a unique 10-digit alphanumeric identifier issued by the Income Tax Department. It serves as an important proof of identity and is mandatory for various financial transactions.</p>
+                
+                <h4>Key Features:</h4>
+                <ul>
+                    <li>Unique identification number</li>
+                    <li>Valid throughout India</li>
+                    <li>Mandatory for tax filing</li>
+                    <li>Required for bank accounts</li>
+                </ul>
+
+                <h4>How to Apply:</h4>
+                <ol>
+                    <li>Visit the official NSDL website</li>
+                    <li>Fill the online application form</li>
+                    <li>Upload required documents</li>
+                    <li>Pay the application fee</li>
+                    <li>Track your application status</li>
+                </ol>
+            </div>
+
+            <div class="service-content" id="pan-hindi">
+                <h3>पैन कार्ड क्या है?</h3>
+                <p>स्थायी खाता संख्या (पैन) आयकर विभाग द्वारा जारी की जाने वाली एक विशिष्ट 10-अंकीय अल्फ़ान्यूमेरिक पहचान संख्या है। यह एक महत्वपूर्ण पहचान प्रमाण है और विभिन्न वित्तीय लेनदेन के लिए अनिवार्य है।</p>
+
+                <h4>मुख्य विशेषताएं:</h4>
+                <ul>
+                    <li>विशिष्ट पहचान संख्या</li>
+                    <li>पूरे भारत में मान्य</li>
+                    <li>टैक्स फाइलिंग के लिए अनिवार्य</li>
+                    <li>बैंक खातों के लिए आवश्यक</li>
+                </ul>
+
+                <h4>आवेदन कैसे करें:</h4>
+                <ol>
+                    <li>NSDL की आधिकारिक वेबसाइट पर जाएं</li>
+                    <li>ऑनलाइन आवेदन फॉर्म भरें</li>
+                    <li>आवश्यक दस्तावेज अपलोड करें</li>
+                    <li>आवेदन शुल्क का भुगतान करें</li>
+                    <li>अपने आवेदन की स्थिति की जांच करें</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init();
+
+        // Initialize particles.js
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#3498db" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#3498db", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+
+        // Language toggle functionality
+        function toggleLanguage() {
+            const button = document.querySelector('.language-switch');
+            const englishContents = document.querySelectorAll('[id$="-english"]');
+            const hindiContents = document.querySelectorAll('[id$="-hindi"]');
+
+            const isEnglish = englishContents[0].classList.contains('active');
+
+            if (isEnglish) {
+                englishContents.forEach(content => content.classList.remove('active'));
+                hindiContents.forEach(content => content.classList.add('active'));
+                button.textContent = 'Switch to English';
+            } else {
+                hindiContents.forEach(content => content.classList.remove('active'));
+                englishContents.forEach(content => content.classList.add('active'));
+                button.textContent = 'Switch to हिंदी';
+            }
+        }
+    </script>
+</body>
+</html>
